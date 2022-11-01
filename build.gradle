@@ -4,9 +4,9 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 
-version = '0.0.1-1.19'
-group = 'net.pomegranits.prosperous_overworld' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'prosperous_overworld'
+version = '0.0.1-1.19.2'
+group = 'net.pomegranits.prosperity' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'prosperity'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -49,10 +49,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'prosperous_overworld'
+            property 'forge.enabledGameTestNamespaces', 'prosperity'
 
             mods {
-                prosperous_overworld {
+                prosperity {
                     source sourceSets.main
                 }
             }
@@ -65,10 +65,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'prosperous_overworld'
+            property 'forge.enabledGameTestNamespaces', 'prosperity'
 
             mods {
-                prosperous_overworld {
+                prosperity {
                     source sourceSets.main
                 }
             }
@@ -84,10 +84,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'prosperous_overworld'
+            property 'forge.enabledGameTestNamespaces', 'prosperity'
 
             mods {
-                prosperous_overworld {
+                prosperity {
                     source sourceSets.main
                 }
             }
@@ -101,10 +101,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'prosperous_overworld', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'prosperity', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                prosperous_overworld {
+                prosperity {
                     source sourceSets.main
                 }
             }
@@ -118,6 +118,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     // Put repositories for dependencies here
     // ForgeGradle automatically adds the Forge maven and Maven Central for you
+    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
 
     // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
     // flatDir {
@@ -136,6 +137,9 @@ dependencies {
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
     // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
 
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.31')
+
+
     // Examples using mod jars from ./libs
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
 
@@ -148,12 +152,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "prosperous_overworld",
-                "Specification-Vendor"    : "prosperous_overworldsareus",
+                "Specification-Title"     : "prosperity",
+                "Specification-Vendor"    : "prosperitysareus",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "prosperous_overworldsareus",
+                "Implementation-Vendor"   : "prosperitysareus",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

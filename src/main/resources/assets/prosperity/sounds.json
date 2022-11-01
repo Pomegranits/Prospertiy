@@ -1,0 +1,22 @@
+{
+  "kakapo_ambient": {
+    "subtitle": "sounds.prosperity.kakapo_chatters",
+    "sounds": [
+      "prosperity:kakapo_ambient"
+    ]
+  },
+
+  "kakapo_hurt": {
+    "subtitle": "sounds.prosperity.kakapo_hurts",
+    "sounds": [
+      "prosperity:kakapo_hurt"
+    ]
+  },
+
+  "kakapo_death": {
+    "subtitle": "sounds.prosperity.kakapo_dies",
+    "sounds": [
+      "prosperity:kakapo_death"
+    ]
+  }
+}
